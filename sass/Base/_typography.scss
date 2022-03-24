@@ -1,0 +1,36 @@
+/* file typography sẽ chứa các setting về fontsize của body, phần text như heading */
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey;
+    padding: 3rem;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    &--main {
+        display: block;
+        font-size: 6.2rem;
+        font-weight: 400;
+        letter-spacing: 1.5rem;
+        animation: moveInLeft 1s ease-out;
+        /*
+        số lần lặp:
+        animation-iteration-count:infinite;
+        tốc độ di chuyển (chậm xong nhanh, ...):
+        animation-timing-function: ease;
+        */
+    }
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.8rem;
+        animation: moveInRight 1s ease-out
+    }
+}
