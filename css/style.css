@@ -5,7 +5,40 @@ light blue: #8e9efc
 medium blue:#5a73fc
 dark blue:#1c3eff
 */
-/* ------------------DEFAULT SETUP------------------ */
+/* ------ color ------*/
+/* ------ gird ------*/
+/* file animation sẽ chứa các keyframe */
+/* --------------- hiệu ứng chữ tiêu đề --------------*/
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+/* --------------- hiệu ứng button ---------------- */
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/* Chứa khởi tạo ban đầu (*, html, body,...) */
 *,
 *::before,
 *::after {
@@ -17,33 +50,16 @@ html {
   font-size: 62.5%; }
 
 body {
+  box-sizing: border-box; }
+
+/* file typography sẽ chứa các setting về fontsize của body, phần text như heading */
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
   color: #777777;
-  padding: 3rem;
-  box-sizing: border-box; }
-
-/* -------------------- HEADER --------------------- */
-.header {
-  background-image: linear-gradient(to right bottom, rgba(142, 158, 252, 0.8), rgba(28, 62, 255, 0.8)), url("../img/background1.jpg");
-  background-size: cover;
-  position: relative;
-  height: 95vh;
-  -webkit-clip-path: ellipse(60% 60% at 50% 33%);
-  clip-path: ellipse(60% 60% at 50% 33%); }
-  .header__text-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
-  .header__logo {
-    height: 7rem; }
-  .header__logo-box {
-    top: 3rem;
-    left: 3rem; }
+  padding: 3rem; }
 
 .heading-primary {
   color: #fff;
@@ -68,28 +84,8 @@ body {
     letter-spacing: 1.8rem;
     animation: moveInRight 1s ease-out; }
 
-/* --------------- hiệu ứng chữ --------------*/
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translateX(0); } }
-
-/* ---------------- button ------------------- */
+/* utilities: chứa các setting các properties của các element bổ sung (như muốn set margin thì sẽ dùng class u-margin)*/
+/* Component: những thuộc tính có thể tái sử dụng, ở dự án này là file button */
 .btn:link, .btn:visited {
   /* visited: thẻ a khi đã đc click*/
   text-transform: uppercase;
@@ -136,10 +132,59 @@ body {
   animation-fill-mode: backwards;
   /*thay đổi trạng thái của phần tử trước khi bắt đầu sau khi kết thúc Animation.*/ }
 
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
+/* Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, … */
+.header {
+  background-image: linear-gradient(to right bottom, rgba(142, 158, 252, 0.8), rgba(28, 62, 255, 0.8)), url("../img/background1.jpg");
+  background-size: cover;
+  position: relative;
+  height: 95vh;
+  -webkit-clip-path: ellipse(60% 60% at 50% 33%);
+  clip-path: ellipse(60% 60% at 50% 33%); }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+  .header__logo {
+    height: 7rem; }
+  .header__logo-box {
+    top: 3rem;
+    left: 3rem; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  background-color: #8e9efc; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    /*chọn toàn bộ element có class bắt đầu bằng "col-"*/
+    /* ^: dấu bắt đầu, $: dấu kết thúc (chọn element có class kết thúc bằng "col-"*/
+    float: left;
+    background-color: aqua; }
+    .row [class^="col-"]:not(:last-child) {
+      /*set margin-bottom cho tất cả row ngoại trừ col cuối cùng */
+      margin-right: 6rem; }
+  .row:not(:last-child) {
+    /*set margin-bottom cho tất cả row ngoại trừ row cuối cùng của thẻ div cha */
+    margin-bottom: 8rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem)/ 2);
+    /* 1/2 chiều rộng của row trừ đi khoảng cách giữa các column*/
+    background-color: yellow;
+    float: left; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem)/ 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2*6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2*((100% - 2*6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3*6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2*((100% - 3*6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3*((100% - 3*6rem) / 4) + 2*6rem); }
