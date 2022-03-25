@@ -8,10 +8,23 @@ dark blue:#1c3eff
 @import './Abstracts/functions';
 @import './Abstracts/mixins';
 @import './Abstracts/variables';
+
+/* --- */
+
 @import './Base/animations';
 @import './Base/base';
 @import './Base/typography';
 @import './Base/utilities';
+
+/* --- */
+
 @import './Component/buttons';
+
+/* --- */
+
 @import './Layout/header';
 @import './Layout/gird';
+
+/* --- */
+
+@import './Pages/home';

@@ -1,1 +1,13 @@
 /* utilities: chứa các setting các properties của các element bổ sung (như muốn set margin thì sẽ dùng class u-margin)*/
+
+.u-center-text {
+    text-align: center !important;
+}
+
+.u-margin-bottom-big {
+    margin-bottom: 8rem !important;
+}
+
+.u-margin-bottom-small {
+    margin-bottom: 1.5rem !important;
+}
