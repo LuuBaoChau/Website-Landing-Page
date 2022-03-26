@@ -1,0 +1,40 @@
+/* --- img phần about us ---*/
+
+.composition {
+    position: relative;
+    /* để element cha composition là relative để có thể chỉnh vị trí các images xung quanh element cha này.*/
+    &__photo {
+        width: 50%;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        border-radius: .2rem;
+        outline-offset: 1rem;
+        position: absolute;
+        z-index: 10;
+        transition: all .2s;
+        /* chỉnh vị trí cho từng img */
+        &--p1 {
+            left: 0;
+            top: -2rem;
+        }
+        &--p2 {
+            right: 2rem;
+            top: 2rem;
+        }
+        &--p3 {
+            left: 10%;
+            top: 10rem;
+        }
+        &:hover {
+            outline: 1.5rem solid $color-primary;
+            transform: scale(1.05);
+            /*to ảnh đc hover*/
+            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            z-index: 20;
+            /*xếp những img được hover lên trên*/
+        }
+        &:hover &__photo:not(:hover) {
+            /*những img k được hover*/
+            transform: scale(.9)/* nhỏ ảnh k đc hover*/
+        }
+    }
+}
