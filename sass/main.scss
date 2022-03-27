@@ -5,27 +5,32 @@ medium blue:#5a73fc
 dark blue:#1c3eff
 */
 
+
+/* --- Abstracts --- */
+
 @import './Abstracts/functions';
 @import './Abstracts/mixins';
 @import './Abstracts/variables';
 
-/* --- */
+/* --- Base --- */
 
 @import './Base/animations';
 @import './Base/base';
 @import './Base/typography';
 @import './Base/utilities';
 
-/* --- */
+/* --- Component --- */
 
 @import './Component/buttons';
 @import './Component/composition';
+@import './Component/skill-box';
+@import './Component/card';
 
-/* --- */
+/* --- Layout --- */
 
 @import './Layout/header';
 @import './Layout/gird';
 
-/* --- */
+/* --- Pages --- */
 
 @import './Pages/home';

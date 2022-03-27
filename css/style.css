@@ -5,10 +5,11 @@ light blue: #8e9efc
 medium blue:#5a73fc
 dark blue:#1c3eff
 */
+/* --- Abstracts --- */
 /* ------ color ------*/
 /* ------ gird ------*/
 /* ------ font ------ */
-/* --- */
+/* --- Base --- */
 /* file animation sẽ chứa các keyframe */
 /* --------------- hiệu ứng chữ tiêu đề --------------*/
 @keyframes moveInLeft {
@@ -123,7 +124,7 @@ body {
 .u-margin-bottom-small {
   margin-bottom: 1.5rem !important; }
 
-/* --- */
+/* --- Component --- */
 /* Component: những thuộc tính có thể tái sử dụng, ở dự án này là file button */
 /* ----------- header -----------*/
 .btn:link, .btn:visited {
@@ -225,7 +226,53 @@ body {
       /*những img k được hover*/
       transform: scale(0.9); }
 
-/* --- */
+.skill-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem 2.5rem 5rem 2.5rem;
+  text-align: center;
+  border-radius: 5rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all .3s; }
+  .skill-box__icon {
+    font-size: 6rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #8e9efc, #1c3eff);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .skill-box:hover {
+    cursor: pointer;
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.card {
+  perspective: 150rem;
+  /* chiều sâu của card, số càng nhỏ thì hình càng gần */
+  position: relative;
+  height: 45rem; }
+  .card__side {
+    backface-visibility: hidden;
+    /* ẩn phần phía dưới của element */
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    height: 45rem;
+    transition: all .8s ease; }
+    .card__side--front {
+      background-color: orangered; }
+    .card__side--back {
+      background-color: green;
+      transform: rotateY(180deg); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+
+/* --- Layout --- */
 /* Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, … */
 .header {
   background-image: linear-gradient(to right bottom, rgba(142, 158, 252, 0.8), rgba(28, 62, 255, 0.8)), url("../img/background1.jpg");
@@ -280,8 +327,22 @@ body {
   .row .col-3-of-4 {
     width: calc(3*((100% - 3*6rem) / 4) + 2*6rem); }
 
-/* --- */
+/* --- Pages --- */
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -25rem; }
+
+.section-skills {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(142, 158, 252, 0.8), rgba(28, 62, 255, 0.8)), url("../img/background2.jpg");
+  background-size: cover;
+  position: relative;
+  padding: 20rem 0;
+  clip-path: ellipse(70% 50% at 50% 50%);
+  margin-top: -20rem; }
+
+.section-courses {
+  background-color: #f7f7f7;
+  padding: 25rem 0 10rem 0;
+  margin-top: -20rem; }
