@@ -54,6 +54,13 @@
         animation-fill-mode: backwards;
         /*thay đổi trạng thái của phần tử trước khi bắt đầu sau khi kết thúc Animation.*/
     }
+    &--blue {
+        background-color: $color-primary;
+        color: $color-white;
+        &::after {
+            background-color: $color-primary;
+        }
+    }
 }
 
 

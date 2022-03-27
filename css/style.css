@@ -7,6 +7,7 @@ dark blue:#1c3eff
 */
 /* --- Abstracts --- */
 /* ------ color ------*/
+/* --- */
 /* ------ gird ------*/
 /* ------ font ------ */
 /* --- Base --- */
@@ -173,6 +174,12 @@ body {
   animation-fill-mode: backwards;
   /*thay đổi trạng thái của phần tử trước khi bắt đầu sau khi kết thúc Animation.*/ }
 
+.btn--blue {
+  background-color: #5a73fc;
+  color: #fff; }
+  .btn--blue::after {
+    background-color: #5a73fc; }
+
 /* ---------- about us ------------*/
 .btn-text:link, .btn-text:visited {
   color: #5a73fc;
@@ -261,16 +268,123 @@ body {
     color: white;
     font-size: 2rem;
     height: 45rem;
-    transition: all .8s ease; }
+    transition: all .8s ease;
+    border-radius: 5rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    /*Thuộc tính overflow xác định điều gì sẽ xảy ra nếu một thành phần box tràn nội dung*/ }
     .card__side--front {
-      background-color: orangered; }
+      background-color: #fff; }
     .card__side--back {
-      background-color: green;
       transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right, #8e9efc, #1c3eff); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right, #55c57a, #28b485); }
+  .card__picture {
+    background-size: cover;
+    background-blend-mode: screen;
+    /*giá trị screen để màu của background sẽ trộn (blend) với hình ảnh background phía dưới*/
+    height: 23rem;
+    clip-path: ellipse(80% 70% at 50% 30%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right, #ffb900, #ff7730), url("../img/involve1.jpg"); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right, #8e9efc, #1c3eff), url("../img/involve2.jpg"); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right, #55c57a, #28b485), url("../img/involve3.jpg"); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-align: right;
+    text-transform: uppercase;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    border-radius: 5rem;
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    /* border-radius cả 2 đầu chữ "Control" và "Your time", nếu k có thuộc tính này 2 chữ sẽ bị tính là 1 block*/ }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(142, 158, 252, 0.85), rgba(28, 62, 255, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.85), rgba(40, 180, 133, 0.85)); }
+  .card__details {
+    padding: 3rem;
+    color: #777777; }
+    .card__details ul {
+      list-style: none;
+      width: 70%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #dbdbdb; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; }
+  .card__price-box {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8rem; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+    margin-bottom: 5rem; }
   .card:hover .card__side--front {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
+
+.testimonial {
+  width: 80%;
+  padding: 6rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.15);
+  font-size: 1.6rem;
+  border-radius: 100rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 9rem; }
+  .testimonial__shape {
+    width: 15rem;
+    height: 15rem;
+    background-color: orangered;
+    float: left;
+    position: relative;
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem);
+    margin-top: -1rem;
+    shape-outside: circle(50% at 50% 50%);
+    /*cho chữ cong theo hình*/ }
+  .testimonial__img {
+    width: 100%;
+    transform: translateY(-2rem); }
+  .testimonial__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0; }
 
 /* --- Layout --- */
 /* Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, … */
@@ -346,3 +460,7 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0 10rem 0;
   margin-top: -20rem; }
+
+.section-testimonials {
+  position: relative;
+  padding: 5rem 0; }
