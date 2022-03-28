@@ -126,6 +126,21 @@ body {
   margin-bottom: 1.5rem !important; }
 
 /* --- Component --- */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .2;
+  overflow: hidden; }
+  .bg-video__content {
+    /* kết hợp vs overflow ở trên sẽ giúp video k bị tràn và vừa vs section*/
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 /* Component: những thuộc tính có thể tái sử dụng, ở dự án này là file button */
 /* ----------- header -----------*/
 .btn:link, .btn:visited {
@@ -199,58 +214,6 @@ body {
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
-
-/* --- img phần about us ---*/
-.composition {
-  position: relative;
-  /* để element cha composition là relative để có thể chỉnh vị trí các images xung quanh element cha này.*/ }
-  .composition__photo {
-    width: 50%;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
-    border-radius: .2rem;
-    outline-offset: 1rem;
-    position: absolute;
-    z-index: 10;
-    transition: all .2s;
-    /* chỉnh vị trí cho từng img */ }
-    .composition__photo--p1 {
-      left: 0;
-      top: -2rem; }
-    .composition__photo--p2 {
-      right: 2rem;
-      top: 2rem; }
-    .composition__photo--p3 {
-      left: 10%;
-      top: 10rem; }
-    .composition__photo:hover {
-      outline: 1.5rem solid #5a73fc;
-      transform: scale(1.05);
-      /*to ảnh đc hover*/
-      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-      z-index: 20;
-      /*xếp những img được hover lên trên*/ }
-    .composition__photo:hover .composition__photo__photo:not(:hover) {
-      /*những img k được hover*/
-      transform: scale(0.9); }
-
-.skill-box {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
-  padding: 2.5rem 2.5rem 5rem 2.5rem;
-  text-align: center;
-  border-radius: 5rem;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  transition: all .3s; }
-  .skill-box__icon {
-    font-size: 6rem;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    background-image: linear-gradient(to right, #8e9efc, #1c3eff);
-    -webkit-background-clip: text;
-    color: transparent; }
-  .skill-box:hover {
-    cursor: pointer;
-    transform: translateY(-1.5rem) scale(1.03); }
 
 .card {
   perspective: 150rem;
@@ -351,6 +314,69 @@ body {
   .card:hover .card__side--back {
     transform: rotateY(0); }
 
+/* --- img phần about us ---*/
+.composition {
+  position: relative;
+  /* để element cha composition là relative để có thể chỉnh vị trí các images xung quanh element cha này.*/ }
+  .composition__photo {
+    width: 50%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: .2rem;
+    outline-offset: 1rem;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    /* chỉnh vị trí cho từng img */ }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 2rem;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 10%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #5a73fc;
+      transform: scale(1.05);
+      /*to ảnh đc hover*/
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20;
+      /*xếp những img được hover lên trên*/ }
+    .composition__photo:hover .composition__photo__photo:not(:hover) {
+      /*những img k được hover*/
+      transform: scale(0.9); }
+
+.enroll {
+  background-image: radial-gradient(150% 200% ellipse at -15%, rgba(255, 255, 255, 0.8) 50%, transparent 50%), url("../img/background3.jpg");
+  /*150% 200% ellipse at -15%: tạo hình như clip-path*/
+  /*radial-gradient: chuyển màu từ tâm ra ngoài (ở đây chuyển từ màu ra hình ảnh*/
+  background-size: cover;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 5rem;
+  height: 50rem; }
+  .enroll__form {
+    padding: 6rem; }
+
+.skill-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem 2.5rem 5rem 2.5rem;
+  text-align: center;
+  border-radius: 5rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  transition: all .3s; }
+  .skill-box__icon {
+    font-size: 6rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #8e9efc, #1c3eff);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .skill-box:hover {
+    cursor: pointer;
+    transform: translateY(-1.5rem) scale(1.03); }
+
 .testimonial {
   width: 80%;
   padding: 6rem;
@@ -364,7 +390,6 @@ body {
   .testimonial__shape {
     width: 15rem;
     height: 15rem;
-    background-color: orangered;
     float: left;
     position: relative;
     clip-path: circle(50% at 50% 50%);
@@ -374,7 +399,8 @@ body {
     /*cho chữ cong theo hình*/ }
   .testimonial__img {
     width: 100%;
-    transform: translateY(-2rem); }
+    transform: translateY(-2rem);
+    transition: all .3s; }
   .testimonial__caption {
     position: absolute;
     top: 50%;
@@ -384,7 +410,14 @@ body {
     text-transform: uppercase;
     font-size: 1.7rem;
     text-align: center;
-    opacity: 0; }
+    opacity: 0;
+    transition: all .5s; }
+  .testimonial:hover .testimonial__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .testimonial:hover .testimonial__img {
+    transform: scale(1.05);
+    filter: blur(0.5rem) brightness(70%); }
 
 /* --- Layout --- */
 /* Layout sẽ chứa các phần tạo nên layout của website như footer, navbar, header, … */
@@ -464,3 +497,7 @@ body {
 .section-testimonials {
   position: relative;
   padding: 5rem 0; }
+
+.section-enroll {
+  padding: 10rem 0;
+  background-image: linear-gradient(to right bottom, #8e9efc, #1c3eff); }

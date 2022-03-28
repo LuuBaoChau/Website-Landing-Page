@@ -245,6 +245,16 @@
     </section>
 
     <section class="section-testimonials">
+        <div class="bg-video">
+            <video class="bg-video__content" autoplay muted loop>
+                <!--  muted (không phát ra âm thanh), autoplay (sẽ chạy ngay khi load trang web), loop(sẽ chạy video liên tục) -->
+                <source src="img/Boulevard.mp4" type="video/mp4">
+                <source src="img/Boulevard.webm" type="video/webm">
+                    Your browser is not supported
+                    text nằm trong thẻ video sẽ hiện ra nếu như source không load được video
+            </video>
+        </div>
+
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
                 testimonials
@@ -293,6 +303,51 @@
         </div>
     </section>
 
+    <section class="section-enroll">
+        <div class="row">
+            <div class="enroll">
+                <div class="enroll__form">
+                    <form class="form">
+                        <div>
+                            <h2 class="heading-secondary">
+                                enroll now
+                            </h2>
+                        </div>
+                        <div class="form__group">
+                            <input id="name" type="text" class="form__input" placeholder="full name" required>
+                            <!-- required yêu cầu phải nhập vào form mới được bấm gửi-->
+                            <label for="name" class="form__label">Full name</label>
+                        </div>
+                        <div class="form__group">
+                            <input id="email" type="email" class="form__input" placeholder="email" required>
+                            <label for="email" class="form__label">Email</label>
+                        </div>
+                        <div class="form__group">
+                            <div class="form__radio-group">
+                                <input type="radio" class="form__radio-input" id="male" name="gender">
+                                <label for="male" class="form__radio-label">
+                                   <span class="form__radio-button"></span>
+                                    Male
+                                </label>
+                            </div>
+                            <div class="form__radio-group">
+                                <input type="radio" class="form__radio-input" id="female" name="gender">
+                                <label for="female" class="form__radio-label">
+                                    <span class="form__radio-button"></span>   
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <a href="#" class="btn btn--blue">
+                                Submit &rarr;
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 </body>

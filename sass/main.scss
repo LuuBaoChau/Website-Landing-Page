@@ -21,10 +21,12 @@ dark blue:#1c3eff
 
 /* --- Component --- */
 
+@import './Component/bg_video';
 @import './Component/buttons';
-@import './Component/composition';
-@import './Component/skill-box';
 @import './Component/card';
+@import './Component/composition';
+@import './Component/enroll';
+@import './Component/skill-box';
 @import './Component/testimonial';
 
 /* --- Layout --- */
