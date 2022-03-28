@@ -358,6 +358,84 @@ body {
   .enroll__form {
     padding: 6rem; }
 
+.form {
+  /*Chúng ta sử dụng “+” (adjacent character ) để chỉ element ngang hàng và liền ngay phía sau của &__input.
+        Chú ý: là phải element liền ngay phía sau, giả sử giữa &__input và &__label còn có 1 số element
+        ngang hàng nữa là &__content, &__figure, … thì “+” sẽ không sử dụng được mà chúng ta sẽ phải sử dụng dấu "~"
+        Vị trí element &__label phải để ngay sau &__input trong file html*/ }
+  .form__group:not(:last-child) {
+    margin-bottom: 2rem; }
+  .form__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    color: inherit;
+    border: none;
+    border-radius: .2rem;
+    border-bottom: 3px solid transparent;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 80%;
+    /* :invalid (các property sẽ xuất hiện khi input truyền vào không hợp lệ, giống email thì phải có kí tự @, …). */ }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+      border-bottom: 3px solid #5a73fc; }
+    .form__input:focus:invalid {
+      border-bottom: 3px solid #ff7730; }
+    .form__input::-webkit-input-placeholder {
+      color: #777777; }
+  .form__input:placeholder-shown + .form__label {
+    /* khi placeholder hiện thì label bị ẩn ... */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+    transition: all .3s; }
+  .form__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s; }
+  .form__radio-group {
+    width: 45%;
+    display: inline-block; }
+  .form__radio-label {
+    font-size: 1.6rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 5rem; }
+  .form__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 0.5rem solid #5a73fc;
+    border-radius: 10rem;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -.4rem; }
+  .form__radio-button::after {
+    /*vẽ vòng tròn nằm bên trong radio button */
+    opacity: 0;
+    content: "";
+    display: block;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5a73fc;
+    transition: opacity .2s; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    /* (radio button được click) thì .form__radio-button:after mới có opacity là 1 */
+    opacity: 1; }
+  .form__radio-input {
+    /*xóa radio button ban đầu*/
+    display: none; }
+
 .skill-box {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
