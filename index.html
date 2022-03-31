@@ -40,7 +40,7 @@
         </div>
     </header>
 
-    <section class="section-about">
+    <section class="section-about" id="section-about">
         <div class="u-center-text u-margin-bottom-big">
             <h2 class="heading-secondary">
                 story about us
@@ -73,7 +73,7 @@
         </div>
     </section>
 
-    <section class="section-skills">
+    <section class="section-skills" id="section-skills">
         <div class="row">
             <div class="col-1-of-4">
                 <div class="skill-box">
@@ -245,7 +245,7 @@
         </div>
     </section>
 
-    <section class="section-testimonials">
+    <section class="section-testimonials" id="section-testimonials">
         <div class="bg-video">
             <video class="bg-video__content" autoplay muted loop>
                 <!--  muted (không phát ra âm thanh), autoplay (sẽ chạy ngay khi load trang web), loop(sẽ chạy video liên tục) -->
@@ -304,7 +304,7 @@
         </div>
     </section>
 
-    <section class="section-enroll">
+    <section class="section-enroll" id="section-enroll">
         <div class="row">
             <div class="enroll">
                 <div class="enroll__form">
@@ -401,6 +401,23 @@
                 </p>
                 <a href="# " class="btn btn--blue ">Enroll now</a>
             </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
+        <div class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#section-about" class="navigation__link">About us</a></li>
+                <li class="navigation__item"><a href="#section-skills" class="navigation__link">Our Skills</a></li>
+                <li class="navigation__item"><a href="#section-courses" class="navigation__link">Our courses</a></li>
+                <li class="navigation__item"><a href="#section-testimonials" class="navigation__link">Testimonials</a></li>
+                <li class="navigation__item"><a href="#section-enroll" class="navigation__link">Enroll form</a></li>
+            </ul>
         </div>
     </div>
 
