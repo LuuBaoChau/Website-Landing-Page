@@ -58,3 +58,30 @@
         }
     }
 }
+
+
+/*-----------------*/
+
+.footer {
+    @include respond(tab-port) {
+        padding: 8rem 0;
+    }
+    &__logo-box {
+        @include respond(tab-port) {
+            margin-bottom: 6rem;
+        }
+    }
+    &__navigation {
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    &__copyright {
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+            float: none;
+        }
+    }
+}

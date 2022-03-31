@@ -22,3 +22,12 @@
         left: 3rem;
     }
 }
+
+
+/*------------------*/
+
+.header {
+    @include respond(phone) {
+        clip-path: ellipse(60% 50% at 50% 20%);
+    }
+}

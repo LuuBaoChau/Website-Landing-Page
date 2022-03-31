@@ -12,7 +12,8 @@
         border-bottom: 3px solid transparent;
         display: block;
         background-color: rgba($color-white, .5);
-        width: 80%;
+        margin-top: 2rem;
+        width: 50%;
         &:focus {
             outline: none;
             box-shadow: 0 1rem 2rem rgba($color-black, .15);
@@ -46,7 +47,7 @@
         transition: all .3s;
     }
     &__radio-group {
-        width: 45%;
+        width: 30%;
         display: inline-block;
     }
     &__radio-label {

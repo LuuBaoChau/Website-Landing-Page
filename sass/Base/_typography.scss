@@ -68,3 +68,29 @@ body {
         margin-bottom: 3rem;
     }
 }
+
+
+/*---------------*/
+
+.heading-primary {
+    &--main {
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
+    }
+    &--sub {
+        @include respond(phone) {
+            letter-spacing: .5rem;
+        }
+    }
+}
+
+.heading-secondary {
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+}

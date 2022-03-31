@@ -44,4 +44,13 @@
         transform: scale(1.05);
         filter: blur(.5rem) brightness(70%);
     }
+    /* --------------- */
+    @include respond(tab-port) {
+        width: 140%;
+        margin-left: -20%;
+    }
+    @include respond(phone) {
+        width: 100%;
+        margin-left: auto;
+    }
 }

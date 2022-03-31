@@ -121,4 +121,36 @@
     &:hover &__side--back {
         transform: rotateY(0);
     }
+    /*-----------*/
+    @include respond(tab-port) {
+        height: auto;
+        //CONTENT HERE
+        &__side {
+            backface-visibility: hidden;
+            position: relative;
+            border-radius: 5rem 5rem 0rem 0rem;
+            height: auto;
+            &--back {
+                transform: rotateY(0);
+                border-radius: 0rem 0rem 5rem 5rem;
+            }
+        }
+        &__cta {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: translate(0);
+            width: 100%;
+            padding: 4rem;
+        }
+        &__price-box {
+            margin-bottom: 3rem;
+        }
+        &__price-value {
+            font-size: 6rem;
+        }
+        &:hover &__side--front {
+            transform: rotateY(0);
+        }
+    }
 }
