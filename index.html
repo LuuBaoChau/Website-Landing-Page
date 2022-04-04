@@ -421,6 +421,18 @@
         </div>
     </div>
 
+    <div class="footer__logo-box">
+        <img srcset="./img/logopng-small.png 1x, ./img/logopng.png 2x" class="footer__logo">
+        <!--1x, 2x là descriptor dùng để mô tả density mà bức ảnh sử dụng đại diện, 
+            và webbrowser sẽ lựa chọn ảnh để dùng phù hợp với size của screen mà user đang sử dụng 
+            (1x là low density, 2x là cho high density)-->
+    </div>
+    <picture>
+        <source media="(max-width: 600px)" srcset="./img/logopng-small.png 1x">
+        <img srcset="./img/logopng.png 1x" class="footer__logo">
+    </picture>
+    <img srcset="img/humangroups1-small.png 1920w, img/humangroups1-small.png 600w" sizes="(max-width: 900px) 13vw, (max-width: 600px) 20vw, 270px" src="./img/humangroups1.jpg" alt="photo1" class="composition__photo composition__photo--p1">
+
 
 </body>
 

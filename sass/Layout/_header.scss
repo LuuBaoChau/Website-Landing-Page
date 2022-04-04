@@ -31,3 +31,12 @@
         clip-path: ellipse(60% 50% at 50% 20%);
     }
 }
+
+
+/*--------Reposive image-------*/
+
+.header {
+    @media (min-resolution: 192dpi) and (max-width: 900px) {
+        background-image: linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba($color-primary-dark, .8)), url('../img/background1.jpg');
+    }
+}
